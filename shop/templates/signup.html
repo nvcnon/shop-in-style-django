@@ -1,0 +1,102 @@
+{% extends 'main.html' %}
+{% block content %}
+<!-- Header-->
+
+
+<!-- Section: Design Block -->
+<body style="background-color: hsl(0, 0%, 96%)">
+  
+  <section class="my-5">
+    <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container py-5">
+      <div class="row gx-lg-5 align-items-center py-3">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            The best offer <br />
+            <span class="text-primary">for your business</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+            quibusdam tempora at cupiditate quis eum maiores libero
+            veritatis? Dicta facilis sint aliquid ipsum atque?
+          </p>
+        </div>
+        
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form method='POST' action="{% url 'signupView' %}">
+                {% csrf_token %}
+                <div class="form-group py-2">
+
+                  {% comment %} <label for="username" class="py-2">Username</label> {% endcomment %}
+                  <input name='username' type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Username">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                </div>
+                {% comment %} email  {% endcomment %}
+                <div class="form-group py-2">
+                  {% comment %} <label for="email" class="py-2">Email</label> {% endcomment %}
+                  <input name='email' type="text" class="form-control" id="email" placeholder="Email">
+                </div>
+                <!-- password -->
+                <div class="form-group py-2">
+                  {% comment %} <label for="exampleInputPassword1" class="py-2">Password</label> {% endcomment %}
+                  <input name='confirm_password' type="password" class="form-control" id="confirm_password" placeholder="confirm password">
+                </div>
+                {% comment %} <div class="form-group py-2">
+                  <label for="exampleInputPassword1" class="py-2">Password</label>
+                  <input name='password' type="password" class="form-control" id="confirm_password" placeholder="confirm Password">
+                </div> {% endcomment %}
+
+                <!-- Checkbox -->
+                 <div class="form-check  mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                  {% comment %} <label class="form-check-label" for="form2Example33"> {% endcomment %}
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+
+                {% comment %} {{ form.as_p }} {% endcomment %}
+
+                <!-- Submit button -->
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                  Signup
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>or sign up with:</p>
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+                  
+                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <a href="https://mail.google.com">
+                      <i class="fab fa-google"></i>
+                    </a>
+                  </button>
+                  
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div> 
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+</body>
+
+
+{% endblock %}
